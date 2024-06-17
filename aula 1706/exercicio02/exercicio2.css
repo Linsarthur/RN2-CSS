@@ -1,0 +1,38 @@
+
+*{
+    font-family: lato,sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+
+h1{
+    text-shadow: 2px 1px 1px #fff;
+}
+
+.secao{
+    margin: 5vw;
+    width: 50vw;
+    box-shadow: 5px 5px 2px #fff;
+}
+
+button {
+    background-color: #0439aa;
+    border-radius: 100px;
+    border: 5px solid none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 2px;
+    cursor: pointer;
+  }
