@@ -1,0 +1,32 @@
+/* Aula 17-06 */
+
+p{
+    color: blue;
+}
+
+/* Seletor de classe = elementos com o atributo class recebem o estilo */
+/* !important ignora as prioridades padrão */
+.destaque{
+    background-color: yellow;
+    color: red;
+}
+
+.texto-centro{
+    text-align: center;
+    color: black;
+}
+
+/* Seletor de ID  = aplicado a um único elemento na página*/
+
+#paragrafo{
+    background-color: crimson;
+    color: white;
+    text-align: right;
+}
+
+/* Especificidade = Elemento, Classe, ID*/
+
+body{
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}

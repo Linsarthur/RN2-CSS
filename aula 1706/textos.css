@@ -1,0 +1,70 @@
+/* propriedades de fonte e texto */
+
+body {
+    /* definindo uma lista de fontes a serem usadas. */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    font-size: 12px;
+}
+
+p {
+    text-align: center;
+    font-style: italic;
+    font-weight: 700;
+    /*do thin(100) ao black (900)*/
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    /* hexadecimal/ rgb/ rgba */
+    color: rgba(255, 0, 0, 0.75);
+    font-size: 2rem;
+}
+
+/* width → largura
+
+height → altura
+
+Existem unidades relativas e absolutas
+
+Exemplos de unidade absoluta:
+
+px, cm, pt… etc
+
+Exemplos de unidades relativas:
+
+vh, vw, em, rem, %… etc */
+
+.quadrado1 {
+    background-color: royalblue;
+    width: 150px;
+    height: 150px;
+}
+
+.quadrado2 {
+    background-color: chartreuse;
+    width: 50vw;
+    height: 20vh;
+}
+.secao2 {
+    width: 200px;
+    background-color: pink;
+    height: 600px;
+}
+
+.quadrado3 {
+    background-color: tomato;
+    width: 80%;
+    height: 50%;
+}
+
+.quadrado4 {
+    background-color: violet;
+    height: 200px;
+    width: 300px;
+}
+
+
+
+/*  */
