@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg, rgba(177,177,177,1) 0%, rgba(9,9,121,1) 76%, rgba(0,212,255,1) 100%);
+    text-align: center;
+}
+#titulo-principal{
+    margin: 15px;
+    text-decoration: underline;
+    font-family: Lato, Arial, Helvetica;
+}
+
+.texto-introducao{
+    padding: auto;
+    margin: 15px;
+    width: auto;
+    height: auto;
+}
+
+.caixa{
+    width: 400px;
+    background-color: yellow;
+    margin: 16px auto;
+
+}
+
+img{
+    width: 400px;
+    border: 1px solid red;
+}
+
+figcaption{
+    background-color: white;
+    width: 400px;
+    margin: 16px auto
+}
+
+
