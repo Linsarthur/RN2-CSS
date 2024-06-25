@@ -43,29 +43,29 @@ console.log("-------------------------------------------------------")
 
 //3° Comparação entre A e B
 
-let num1 = 6
+let num1 = 4
 let num2 = 4
 
 if (num1 > num2) {
     console.log("O número", num1, "é o maior!")
 } else if (num2 > num1) {
     console.log("O número,", num2, "é o maior!")
-} else if (num1 == num2) {
+} else if (num1 === num2) {
     console.log("Os números", num1, "e", num2, "são números equivalentes!")
 }
 
 console.log("-------------------------------------------------------")
 
 //4° Reajuste salarial baseado nos filhos 
-let salario = 1640
-let quantidadeDependentes = 0
+let salario = 3000
+let quantidadeDependentes = 8
 let ajuste30 = salario * 0.3
 let ajuste40 = salario * 0.4
 let novoSalario30 = ajuste30 + salario
 let novoSalario40 = ajuste40 + salario
 
 
-if (quantidadeDependentes == 0) {
+if (quantidadeDependentes === 0) {
     console.log("Você não possui dependentes nenhum reajuste feito!")
 } else if (quantidadeDependentes >= 1 && quantidadeDependentes <= 5) {
     console.log("Seu dependentes são", quantidadeDependentes, "então seu reajuste vai ser de 30%, ficando então com R$" + novoSalario30 + " de salário.")
@@ -109,9 +109,9 @@ console.log("-------------------------------------------------------")
 
 //6° Ano bissexto
 
-let ano = 2023
+let ano = 2025
 
-if (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0) {
+if (ano % 4 === 0 && ano % 100 != 0 || ano % 400 === 0) {
     console.log("O ano,", ano, "é um ano bissexto!")
 } else {
     console.log("Ano comum")
