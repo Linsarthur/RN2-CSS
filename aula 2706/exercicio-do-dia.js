@@ -1,206 +1,160 @@
+// 1. Crie uma função que recebe um array com os nomes dos alunos de uma turma, e outro array que recebe a lista de presença com os nomes. Retorne uma lista com quais alunos faltaram.
+function listarAusentes(alunos, lista) {
+    let ausentes = [];
 
+    for(let nome of alunos) {
+        if(lista.includes(nome)) {
+            console.log(`O aluno ${nome} está presente.`);
+        } else {
+            console.log(`O aluno ${nome} está ausente.`);
+            ausentes.push(nome);
+        }
+    }
 
-
-
-
-
-//1. Crie uma função que recebe um array com os nomes dos alunos de uma turma, e outro array que recebe a lista de presença com os nomes. Retorne uma lista com quais alunos faltaram.
-
-console.log('-----------------------------------------')
-let nomedosAlunos = ["Arthur", "Matheus", "Davi", "Andrea", "Joaquim"]
-let listadePresenca = ["Arthur", "Matheus", "Davi"]
-
-function alunosPresentes(nomedosAlunos, listadePresenca) {
-    let faltas = nomedosAlunos.filter(nomedoAluno => !listadePresenca.includes(nomedoAluno))
-    return faltas;
-}
-let faltaram = alunosPresentes(nomedosAlunos, listadePresenca)
-console.log(faltaram)
-
-console.log('-----------------------------------------')
-
-//2. Crie uma função que recebe um array de números e retorna um array com todos os valores elevados ao quadrado.
-console.log("-----------------------------------------")
-let numeros = [1, 2, 3, 4, 5]
-function quadratica(numeros) {
-
-    let test = numeros.map(element => element ** 2);
-
-    return console.log(test)
-
+    return ausentes;
 }
 
-quadratica(numeros)
+let turma = ["José Almir", "Gabriel Braga", "Victor Icoma", "Igor Gondim", "Bismark"];
+let presenca = ["Gabriel Braga", "Victor Icoma", "Bismark"];
 
-console.log("-----------------------------------------")
+let faltas = listarAusentes(turma, presenca);
+console.log(faltas);
 
-//3. Crie uma função que recebe um array de nomes de arquivos, e recebe também uma extensão, a função deve retornar apenas os nomes de arquivo que forem dessa extensão.
 
-let archiveNames = ["important.pdf", "COD.jpg", "WARZONE.txt", "CONTROLÃO.txt", "TEM QUE ACABAR.txt"]
-let extension = ".txt"
+// 2. Crie uma função que recebe um array de números e retorna um array com todos os valores elevados ao quadrado.
+function elevarQuadrado(arr) { // [2, 3, 9] -> [4, 9, 81]
+    let quadrado = [];
 
-function returExtension (archiveNames, extension) {
-    let extensionEspicified = archiveNames.filter(archiveNames => archiveNames.endsWith(extension))  
-    return console.log(extensionEspicified)
+    for(let n of arr) {
+        quadrado.push(n**2);
+    }
+
+    return quadrado;
 }
 
-returExtension(archiveNames, extension)
+let valores = [2, 3, 9];
+let resultado = elevarQuadrado(valores);
+console.log(resultado);
+
+// 3. Crie uma função que recebe um array de nomes de arquivos, e recebe também uma extensão, a função deve retornar apenas os nomes de arquivo que forem dessa extensão.
+function filtrarArquivos(arquivos, ext) {
+    let filtrados = [];
+
+    for(let nome of arquivos) {
+        if(nome.endsWith(ext)) {
+            filtrados.push(nome);
+        }
+    }
+
+    return filtrados;
+}
+
+let arquivosPasta = ["codigo.js", "estilos.css", "index.html", "sobre.html"];
+let extensao = ".html";
+let arquivosHtml = filtrarArquivos(arquivosPasta, extensao);
+console.log(`Arquivos da extensão ${extensao}: ${arquivosHtml}`);
 
 // 4. Crie um array contendo os números de 1 a 10 e exiba-os no console com for-of e for comum.
+function exercicio4() {
+    let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let numeros4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-console.log("Usando for...of:");
-for (let numero of numeros4) {
-    console.log(numero);
+    console.log("Mostrando os números com for-of: ");
+    for(let n of numeros) {
+        console.log(n);
+    }
+    console.log("Mostrando os números com for comum: ");
+    for(let i = 0; i < numeros.length; i++) {
+        console.log(numeros[i]);
+    }
 }
 
-console.log("Usando for comum:");
-for (let i = 0; i < numeros4.length; i++) {
-    console.log(numeros4[i]);
-}
+exercicio4();
 
-//5. Crie uma função que recebe um array de strings como parâmetro e retorne um novo array apenas com as strings acima de 5 caracteres.
-function filtrarStringsPorComprimento(strings) {
-    // Filtra as strings com mais de 5 caracteres
-    const stringsFiltradas = strings.filter(string => string.length > 5);
-    
-    // Retorna o novo array
+// 5. Crie uma função que recebe um array de strings como parâmetro e retorne um novo array apenas com as strings acima de 5 caracteres.
+function filtrarStrings(arr) {
+    let stringsFiltradas = [];
+
+    for(let str of arr) {
+        if(str.length > 5) {
+            stringsFiltradas.push(str);
+        }
+    }
+
     return stringsFiltradas;
 }
 
-// Exemplo de uso
-const strings = ["curto", "maislonga", "cinco5", "pequena", "extremamenteLonga", "abc"];
-const resultado = filtrarStringsPorComprimento(strings);
-console.log(resultado); //
+let palavras = ["batata", "pão", "arroz", "carne", "ovo", "alface"];
+console.log(filtrarStrings(palavras));
 
+// 6. Crie um array com 7 números. Percorra e indique qual o maior número deles.
+function exercicio6() {
+    let numeros = [1, 4, 9, 80, -100, 0, 49];
+    let maior = numeros[0];
 
-//6. Crie um array com 7 números. Percorra e indique qual o maior número deles.
-
-let numeros6 = [3, 12, 7, 5, 19, 1, 8];
-
-let maiorNumero = numeros6[0]; 
-
-for (let i = 1; i < numeros6.length; i++) {
-    if (numeros6[i] > maiorNumero) {
-        maiorNumero = numeros6[i]; 
+    for(let i = 1; i < numeros.length; i++) {
+        if(numeros[i] > maior) {
+            maior = numeros[i];
+        }
     }
+
+    console.log(maior);
 }
-
-console.log("O maior número é:", maiorNumero); 
-
-
 // 7. Crie uma função que extrai os dígitos verificadores de um cpf. Ex: "056.985.990-23" -> "23". Retorne apenas os dois últimos dígitos.
-
 function extrairDigitosVerificadores(cpf) {
-    let digitosVerificadores = cpf.slice(-2);
-    
-
-    return digitosVerificadores;
+    const partesCpf = cpf.split("-"); // gera um array com [numeros, verificadores]
+    return partesCpf[1];
 }
 
-let cpf = "056.985.990-23";
-let digitos = extrairDigitosVerificadores(cpf);
-console.log(digitos); // 
+console.log(extrairDigitosVerificadores("056.985.990-23"));
 
-
-//8. Crie uma função que inverte uma string. Retorna ela invertida.
-
-function inverterString(str) {
-    
-    let arrayDeCaracteres = str.split('');
-    
-   
-    let arrayInvertido = arrayDeCaracteres.reverse();
-    
-   
-    let stringInvertida = arrayInvertido.join('');
-    
-    
-    return stringInvertida;
+// 8. Crie uma função que inverte uma string. Retorna ela invertida.
+function inverterPalavra(palavra) {
+    return palavra.split("").reverse().join("");
 }
 
+console.log(inverterPalavra("Batata"));
 
-let exemplo = "Hello, world!";
-let invertida = inverterString(exemplo);
-console.log(invertida);
+// 9. Escreva uma função que receba uma palavra e um número. Retorne a palavra repetida a quantidade de vezes indicada pelo segundo parâmetro. Exemplo: repetir("batata", 3) -> "batatabatatabatata". OBS: Utilize um loop para resolver.
+function repetirPalavra(palavra, qt) {
+    // return palavra.repeat(qt);
+    let resultado = "";
 
-//9. Escreva uma função que receba uma palavra e um número. Retorne a palavra repetida a quantidade de vezes indicada pelo segundo parâmetro. Exemplo: repetir("batata", 3) -> "batatabatatabatata". OBS: Utilize um loop para resolver.
-
-function repetirPalavra(palavra, quantidade) {
-    let resultado9 = ''; 
-
-    
-    for (let i = 0; i < quantidade; i++) {
-        resultado9 += palavra; 
+    for(let i = 0; i < qt; i++) {
+        resultado += palavra;
     }
 
-    
-    return resultado9;
+    return resultado;
 }
 
+console.log(repetirPalavra("batata", 3));
 
-let palavra = "batata";
-let quantidade = 3;
-let resultado9 = repetirPalavra(palavra, quantidade);
-console.log(resultado9); 
+// 10. Escreva uma função que receba duas strings e retorne true se elas forem iguais ou false caso contrário.
+function compararString(str1, str2) {
+    return str1 === str2;
+}
 
+console.log(compararString("batata", "batata"));
 
-//10. Escreva uma função que receba duas strings e retorne true se elas forem iguais ou false caso contrário.
+// 11. Crie uma função que recebe um dia, mês e ano dentro de um array. Retorna a data utilizando o separador que também será definido via parâmetros da função (-, / ou .). Ex: formatarData(array, '.') -> '20.06.2000'
+let dataArray = ["20", "06", "2000"];
 
-function compararStrings(string1, string2) {
-    
-    if (string1 === string2) {
-        return true; 
-    } else {
-        return false; 
+function formatarData(arr, sep) {
+    return arr.join(sep);
+}
+
+console.log(formatarData(dataArray, "-"));
+
+// 12. Crie uma função que recebe um array, um valor de busca e um valor padrão. Caso o elemento exista no array retorne o elemento, caso contrário retorne o valor padrão definido via parâmetro. Ex: busca(array, 'batata', 'não tem batata') -> 'não tem batata'
+
+function busca(array, elemento, valorPadrao) {
+    if(array.includes(elemento)) {
+        return elemento;
     }
+
+    // Caso não entre no if da L150, o código chegará na linha abaixo (equivale a um else);
+    return valorPadrao;
 }
 
-
-let str1 = "teste";
-let str2 = "teste";
-let str3 = "diferente";
-
-console.log(compararStrings(str1, str2)); 
-console.log(compararStrings(str1, str3)); 
-
-
-//11. Crie uma função que recebe um dia, mês e ano dentro de um array. Retorna a data utilizando o separador que também será definido via parâmetros da função (-, / ou .). Ex: formatarData(array, '.') -> '20.06.2000'
-
-
-function formatarData(dataArray, separador) {
-    
-    let dia = dataArray[0];
-    let mes = dataArray[1];
-    let ano = dataArray[2];
-
-    
-    let dataFormatada = `${dia}${separador}${mes}${separador}${ano}`;
-
-
-    return dataFormatada;
-}
-
-
-let data = [20, 6, 2000];
-console.log(formatarData(data, '.')); 
-console.log(formatarData(data, '/')); 
-console.log(formatarData(data, '-')); 
-
-
-// 12. Crie uma função que recebe um array, um valor de busca e um valor padrão. Caso o elemento exista no array retorne o elemento, caso contrário retorne o valor padrão definido via parâmetro. Ex: busca(array, 'batata', 'não tem batata') -> 'não tem batata' */
-
-function busca(array, valorBusca, valorPadrao) {
-    
-    if (array.includes(valorBusca)) {
-        return valorBusca;
-    } else {
-        return valorPadrao;
-    }
-}
-
-// Exemplo de uso
-const arrayExemplo = ['maçã', 'banana', 'laranja', 'uva'];
-console.log(busca(arrayExemplo, 'banana', 'Não encontrado')); 
-console.log(busca(arrayExemplo, 'pera', 'Não encontrado')); 
+let array = ["alface", "pimenta", "maionese", "ovo"];
+console.log(busca(array, "batata", "Não tem batata =("));
+console.log(busca(array, "pimenta", "Não tem pimenta =)"));

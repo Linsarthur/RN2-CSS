@@ -19,31 +19,31 @@
 
 let comida = "Batata Assada";
 
-console.log(comida [0]); //B
-console.log(comida [1]); //a
-console.log(comida [2]); //t
-console.log(comida [6]); // Espaço em branco
-console.log(comida [12]); //a -> Ultimo caractere
-console.log(comida [500]); // undefined -> Não existe essa posição na string
+// console.log(comida [0]); //B
+// console.log(comida [1]); //a
+// console.log(comida [2]); //t
+// console.log(comida [6]); // Espaço em branco
+// console.log(comida [12]); //a -> Ultimo caractere
+// console.log(comida [500]); // undefined -> Não existe essa posição na string
 
-//tamanho da string
-console.log(comida.length); // Total de caracteres da string
-console.log(comida[comida.length -1]); //Puxar o último indice sem saber a quantidade de índices presentes na string.
+// //tamanho da string
+// console.log(comida.length); // Total de caracteres da string
+// console.log(comida[comida.length -1]); //Puxar o último indice sem saber a quantidade de índices presentes na string.
 
 
 //Utilizando o for
-for(let i = 0; i < comida.length; i++){
+for(i = 0; i < comida.length; i++){
     console.log(comida[i]); // Monstra um caractere por vez
 }
 
 //Funções de string
 let palavra = "Java Script"
-console.log(palavra)
-let palavraMin = palavra.toLowerCase() //lowecase para deixar minúsculo
-console.log(palavraMin)
-console.log(palavra.toUpperCase()) //uppercase para deixar maiúsculo
+// console.log(palavra)
+// let palavraMin = palavra.toLowerCase() //lowecase para deixar minúsculo
+// console.log(palavraMin)
+// console.log(palavra.toUpperCase()) //uppercase para deixar maiúsculo
 
-console.log(palavra.charAt(0)) //Retorna o ídice 0
+console.log(palavra.charAt(5)) //Retorna o ídice 0
 
 console.log(palavra.replace("Java", "Type"))
 console.log(palavra.replace("J", "R"))
